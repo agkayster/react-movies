@@ -8,14 +8,14 @@ on:
 # runs a sequence of commands
 jobs:
     build:
-        runs-on: ubuntu-latest # ubuntu is fast, light weight and easily supported
+        runs-on: ubuntu-latest
         steps:
             - name: checkout code
               uses: actions/checkout@v5
             - name: Set up Node.js
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4 # Updated to v4
               with:
-                  node-version: '18'
+                  node-version: 'latest' # Changed to latest
             - name: Install dependencies
               run: npm install
             - name: Run tests
